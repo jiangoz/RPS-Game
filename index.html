@@ -46,22 +46,34 @@
                     case "scissors": return "Computer's Scissors beats Player's Paper. Computer wins!";
                 }
             }
-            else {
-                // player had scissors
+            else if (player === "scissors") {
                 switch (computer) {
                     case "rock": return "Computer's Rock beats Player's Scissors. Computer wins!";
                     case "paper": return "Player's Scissors beats Computer's Paper. Player wins!";
                     case "scissors": return "Both had Scissors. It's a tie!";
                 }
             }
+            return `Error: Player gave invalid input of "${playerChoice}"`;
         }
 
+        //play the game until player quits
+        game();
+
         function game() {
-            // play the game 5 times
-            for (let i = 0; i < 5; i++) {
-                let playerChoice = prompt("Enter Your Choice: Rock | Paper | Scissors");
-                console.log(matchRound(playerChoice, computerPlay()));
+
+            while (true) {
+                let playerChoice = prompt("Enter Your Choice: Rock | Paper | Scissors | QUIT");
+                playerChoice = playerChoice.toLowerCase();
+                if (playerChoice === "quit") {
+                    console.log("Game has ended.");
+                    alert("Game has ended.");
+                    break;
+                }
+                result = matchRound(playerChoice, computerPlay());
+                console.log(result);
+                alert(result);
             }
+
         }
 
     </script>
