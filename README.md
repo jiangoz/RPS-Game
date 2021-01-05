@@ -1,2 +1,2 @@
-### Rock, Paper, Scissors 
-implemented using JS script tag inside of HTML
+### Rock, Paper, Scissors Game
+https://jiangoz.github.io/RPS-Game/
