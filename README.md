@@ -1,2 +1,2 @@
 ### Rock, Paper, Scissors Game
-https://jiangoz.github.io/RPS-Game/
+[Click here to play](https://jiangoz.github.io/RPS-Game/)
