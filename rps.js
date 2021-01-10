@@ -42,26 +42,26 @@ function matchRound(playerChoice, computerChoice) {
 
 // Event listeners
 
-const rockBtn = document.querySelector('#container>#rock');
-const result = document.querySelector('#result>#roundMsg');
+const rockBtn = document.querySelector('#rock');
+const result = document.querySelector('#roundMsg');
 rockBtn.addEventListener('click', () => {
     result.textContent = matchRound("rock", computerPlay());
     console.log("clicked rock");
 });
 
-const paperBtn = document.querySelector('#container>#paper');
+const paperBtn = document.querySelector('#paper');
 paperBtn.addEventListener('click', () => {
     result.textContent = matchRound("paper", computerPlay());
     console.log("clicked paper");
 });
 
-const scissorsBtn = document.querySelector('#container>#scissors');
+const scissorsBtn = document.querySelector('#scissors');
 scissorsBtn.addEventListener('click', () => {
     result.textContent = matchRound("scissors", computerPlay());
     console.log("clicked scissors");
 });
 
-const resetBtn = document.querySelector('#result>#reset');
+const resetBtn = document.querySelector('#reset');
 resetBtn.addEventListener('click', () => {
     result.textContent = "";
     console.log("clicked reset");
