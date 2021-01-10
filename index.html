@@ -7,76 +7,30 @@
 
     <title>RPS Game</title>
 
-    <link rel="stylesheet" href="#">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
-    <script>
+    <div id="container">
 
-        // computer will randomly choose RPS
-        function computerPlay() {
-            let randNum = Math.random();
-            if (randNum <= 0.33) {
-                return "Rock";
-            } else if (randNum <= 0.66) {
-                return "Paper";
-            } else {
-                return "Scissors";
-            }
-        }
+        <h1>Rock Paper Scissors</h1>
+        <p class="msg">Player, choose your option:</p>
+        <button id="rock" class="button">Rock</button>
+        <button id="paper" class="button">Paper</button>
+        <button id="scissors" class="button">Scissors</button>
 
-        // plays a single round of RPS
-        function matchRound(playerChoice, computerChoice) {
+        <div id="result">
+            <p class="msg" id="roundMsg"></p>
+            <button id="reset" class="button">Reset</button>
+        </div>
 
-            let player = playerChoice.toLowerCase();
-            let computer = computerChoice.toLowerCase();
+    </div>
 
-            if (player === "rock") {
-                switch (computer) {
-                    case "rock": return "Both had Rock. It's a tie!";
-                    case "paper": return "Computer's Paper beats Player's Rock. Computer wins!";
-                    case "scissors": return "Player's Rock beats Computer's Scissors. Player wins!";
-                }
-            }
-            else if (player === "paper") {
-                switch (computer) {
-                    case "rock": return "Player's Paper beats Computer's Rock. Player wins!";
-                    case "paper": return "Both had Paper. It's a tie!";
-                    case "scissors": return "Computer's Scissors beats Player's Paper. Computer wins!";
-                }
-            }
-            else if (player === "scissors") {
-                switch (computer) {
-                    case "rock": return "Computer's Rock beats Player's Scissors. Computer wins!";
-                    case "paper": return "Player's Scissors beats Computer's Paper. Player wins!";
-                    case "scissors": return "Both had Scissors. It's a tie!";
-                }
-            }
-            return `Error: Player gave invalid input of "${playerChoice}"`;
-        }
+    <script src="rps.js"></script>
 
-        //play the game until player quits
-        game();
-
-        function game() {
-
-            while (true) {
-                let playerChoice = prompt("Enter Your Choice: Rock | Paper | Scissors | QUIT");
-                playerChoice = playerChoice.toLowerCase();
-                if (playerChoice === "quit") {
-                    console.log("Game has ended.");
-                    alert("Game has ended.");
-                    break;
-                }
-                result = matchRound(playerChoice, computerPlay());
-                console.log(result);
-                alert(result);
-            }
-
-        }
-
-    </script>
 </body>
 
 </html>
